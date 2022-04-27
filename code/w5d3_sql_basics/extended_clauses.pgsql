@@ -24,6 +24,10 @@ SeLeCt NAME, rEGiOn FrOm CounTry;
 -- En la clausula SELECT, podemos "filtrar" que columnas (atributos) queremos, pero no las filas (registros)
 -- La query arriba devuelve todos los name y region para todos los países, i.e.: todas las filas
 
+-- Es posible realizar operaciones entre las columnas. En este caso, estamos dividiendo la poblacion entre
+-- el area de la superficie del pais
+SELECT population/surfacearea FROM country;
+
 
 -- Si queremos filtrar las filas, necesitamos de otra clausula: la clausula WHERE
 
