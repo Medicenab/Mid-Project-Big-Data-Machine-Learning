@@ -15,11 +15,26 @@ def confidencial(id = Header(None)):
 
 # Le pasamos valores al endpoint a traves del propio endpoint
 # Ademas, especificamos que el valor debe de ser de tipo int
+
+@router.get("/all/pokemons")
+def get_pokemons():
+    res = list(db["pokemon"].find({}))[:150]
+    return loads(json_util.dumps(res))
+    
+@router.get("/range/pokemons/{numero}")
+def get_pokemons(numero:int):
+    res = list(db["pokemon"].find({}).limit(numero))
+    return loads(json_util.dumps(res))
+
 @router.get("/pokemon/{id}")
 def get_pokemons(id:int):
     res = list(db["pokemon"].find({"id":id}))[0]
     return loads(json_util.dumps(res))
     
+@router.get("/pokemon/{name}")
+def get_pokemon_name(name:str):
+    res = list(db["pokemon"].find({"name":name.lower()}))[0]
+    return loads(json_util.dumps(res))
     
 # Le pasamos valores al endpoint a traves del body
 @router.post("/add/pokemon")
