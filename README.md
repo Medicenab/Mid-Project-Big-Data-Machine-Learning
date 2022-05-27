@@ -29,5 +29,5 @@ What will be qualified:
 | --------------------------------- | --------------------------------------------------------- | -------------- |
 | 1 - Abraham Sanchez Guerra             |https://github.com/Medicenab/Mid-Project-Big-Data-Machine-Learning       |Open Data BCN      |
 | 2 - Rodrígo Ruiz Lucini           |https://github.com/rodrigo-rl/bdml0322-Mid-Project       |UEFA Euro Cup 2020      |
-| 3 - Iñigo Remirez               |       |UEFA Euro Cup 2020      |
+| 3 - Iñigo Remirez               |https://github.com/iremirezdeganuza72/Mid_project_Core_Code       |UEFA Euro Cup 2020      |
 | 4 - Ignacio Soria Diez               |https://github.com/Nachosori/CovidPI       |Data Covid-19 Global     |
