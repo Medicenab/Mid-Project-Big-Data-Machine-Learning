@@ -4,13 +4,24 @@ from bson import json_util
 from json import loads
 router= APIRouter()
 
-
-@router.get("/BCN/{Nationality}")
-def get_nat(Nationality):
-    res = list(db["Nacionalidades"].find({}).distinct("Nationality"))
-    return res
-
-@router.get("/BCN/id/{id}")
-def get_bcn(id):
-    res=list(db["id"].find({"id":id}))[0]
+@router.get("/all/data")
+def get_all():
+    res = list(db["INM.NATION"].find({}))
     return loads(json_util.dumps(res))
+
+@router.get("/year")
+def get_year():
+    res=list(db["INM.NATION"].find({}).distinct("Year"))
+    return loads(json_util.dumps(res))
+
+@router.get("/district")
+def get_district():
+    res=list(db["INM.NATION"].find({}).distinct("District Name"))
+    return loads(json_util.dumps(res))
+
+@router.get("/district-year/{district}/{year}")
+def get_district_name(district:str,year:str):
+    res = list(db["INM.NATION"].find({"Year":year}).find({"District Name":district}))
+    return loads(json_util.dumps(res))
+
+    
