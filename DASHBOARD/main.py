@@ -7,11 +7,11 @@ from DATA.geo import map_dis
 st.title('Inmigracion en Barcelona')
 st.text('Distribucion de nacionalidades por distrito en BCN, durante 2015, 2016 y 2017')
 year=get_year()
-year_select = st.multiselect('Esgoje un año', [x for x in year])
+year_select = st.multiselect('Selecciona algun año:', [x for x in year])
 
 BCN=get_dis()
 
-dist = st.selectbox('Esgoje un distrito', [x for x in BCN])
+dist = st.selectbox('Selecciona un distrito', [x for x in BCN])
 
 
 for_graph={}
@@ -77,10 +77,6 @@ if len(year_select)==3:
                            key=lambda item: item[1],
                            reverse=True))
     pieChart(for_graph_2)
-
-
-
-#for_graph=data_clean(all_data,year_select,dist)
 
 
 
