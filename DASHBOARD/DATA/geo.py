@@ -1,6 +1,6 @@
 
 import pandas as pd
-import numpy as np
+
 
 Ciutat_Vella=[[41.38022,2.17319]]
 Eixample=[[41.38896, 2.16179]]

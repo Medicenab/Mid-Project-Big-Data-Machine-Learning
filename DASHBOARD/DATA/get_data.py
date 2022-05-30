@@ -1,5 +1,7 @@
-import re
+from re import X
 import requests
+import itertools
+
 def get_dis():
     return requests.get(f"https://api-midproject.herokuapp.com/district").json()
 
@@ -21,3 +23,10 @@ def data_clean(data,year_select,dist):
                            key=lambda item: item[1],
                            reverse=True))
     return for_graph
+
+def data_reduce(data):
+    x={}
+    for key, group in itertools.groupby(data, lambda k: 'All the rest' if (data[k]<70) else k):
+        x[key] = sum([data[k] for k in list(group)]) 
+
+    return x
